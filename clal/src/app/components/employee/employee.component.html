@@ -1,0 +1,8 @@
+<div class="employee-card row" (click)="chooseEmployee()" [ngStyle]="{'backgroundColor': chosen ? 'lightgray' : '' }">
+    <div class="col-sm-8" >
+    <p>{{employee.EmployeeName}}</p>
+    </div>
+    <div class="col-sm-4">
+        <img [src]="employee.EmployeePicture">
+    </div>
+</div>

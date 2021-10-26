@@ -1,0 +1,9 @@
+<div class="employees-view">
+    <div class="input-button">
+        <input type="text" [(ngModel)]="search" placeholder="הקלד שם עובד..." maxlength="25">
+        <button class="dropdown-btn {{opened ? 'open': 'close'}}" (click)="opened = !opened" type="button">></button>
+    </div>
+    <div *ngIf="opened" class="employee-dropdown">
+        <employee *ngFor="let employee of (employees | filterEmployee: search)" [employee]="employee"></employee>
+    </div>
+</div>

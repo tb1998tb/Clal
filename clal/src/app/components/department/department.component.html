@@ -1,0 +1,8 @@
+<div class="department" [hidden]="!department.isCollapsed" > 
+    <div [ngStyle]="{'backgroundColor': chosen ? 'lightgray' : '' }">
+        <div class="sub-item" *ngIf="department.index > 1" [ngStyle]="{'margin-right': (department.index + 0.5 * department.index) * 15 - 30 + 'px'}">1</div>
+        <i class="bi bi-file-earmark-fill" (click)="collapseSubs()" [ngStyle]="{'color': department.subs && department.subs.length > 0 ? 'cadetblue' : 'gray'}"></i>
+        <span (click)="chooseDepartment()">{{department.DepartmentName}}</span>
+    </div>
+    <department *ngFor="let subDepartment of department.subs" [department]="subDepartment"></department>
+</div>

@@ -1,0 +1,50 @@
+.employees-view {
+    overflow: auto;
+
+    .input-button {
+        position: relative;
+        width: 100%;
+        
+        input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .dropdown-btn {
+            position: absolute;
+            border:none;
+            display: block;
+            width: 15px;
+            height: 15px;
+            line-height: 16px;
+            font-size: 20px;
+            top: 0;
+            bottom: 0;
+            left: 15px;
+            margin: auto;
+            background: unset;
+            padding: 0;
+            outline: none;
+            cursor: pointer;
+            transition: .1s;
+
+            &.open {
+                transform: rotate(-90deg);
+            }
+
+            &.close {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .employee-dropdown {
+        max-height: 40vh;
+        height: 40vh;
+        overflow-y: auto;
+        border: 1px solid black;
+        border-top: none;
+        margin-top: 0px;
+    }
+}
+

@@ -1,0 +1,19 @@
+
+#app-body {
+    width: 100vw;
+    direction: rtl;
+    margin: 0;
+    padding: 20px;
+
+    #tasks-view-div {
+        border:1px solid black;
+        height: 94vh;
+    }
+}
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,12 @@
+<div *ngIf="items && items.length > 0" class="row">
+    <div class="col-sm-8" style="text-align: rifht;">
+        <span class="page-num-option {{num == pageNum ? 'chosen':''}}" *ngFor="let num of pageNumOptions" (click)="setPageNumValue(num)">{{num}}</span>
+    </div>
+    <div class="col-sm-4" style="text-align: left;">
+        <span>מספר פריטים לדף: </span>
+        <select [(ngModel)]="pageItems" (ngModelChange)="setPageItemsValue(pageItems)">
+            <option *ngFor="let opt of pageItemsOptions" [value]="opt">{{opt == 0? 'הכל' : opt}}</option>
+        </select>
+    </div>
+</div>
+

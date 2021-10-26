@@ -1,0 +1,42 @@
+.tasks-view {
+
+    table {
+        direction: rtl;
+        margin-bottom: 10px;
+    }
+
+    table tbody {
+        display: block;
+        max-height: 80vh;
+        overflow-y: overlay;
+      }
+      
+      table thead, table tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        background-color: lightblue;
+        border:1px solid white;
+
+        td {
+            padding: 0px 5px;
+        }
+      }
+
+
+      th {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        background-color: cadetblue;
+        border:1px solid white;
+        text-align: center;
+      }
+}
+
+.navigate-tr {
+    text-align: center;
+    opacity: 0.8;
+    font-size: 20px;
+}

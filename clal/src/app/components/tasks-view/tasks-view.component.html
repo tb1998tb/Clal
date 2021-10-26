@@ -1,0 +1,29 @@
+<div class="tasks-view">
+    <table *ngIf="tasks && tasks.length > 0">
+        <thead>
+            <tr>
+                <th title="TaskNumber">מספר משימה</th>
+                <th title="TaskName">שם משימה</th>
+                <th title="StatusID">מזהה סטטוס</th>
+                <th title="EmployeeName">שם עובד</th>
+                <th title="DepartmentID">מזהה מחלקה</th>
+                <th title="DueDate">תאריך</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="paginator.enableNavigate(-1)" class="navigate-tr" (click)="paginator.navigatePage(-1)">< הקודם </tr>
+        <tr *ngFor="let task of tasks | paging:pageNum:pageItems" [ngStyle]="{'backgroundColor': task.isPast?'tomato':''}">
+            <td [title]="task.TaskNumber">{{task.TaskNumber}}</td>
+            <td [title]="task.TaskName">{{task.TaskName}}</td>
+            <td [title]="task.StatusID">{{task.StatusID}}</td>
+            <td [title]="task.EmployeeName">{{task.EmployeeName}}</td>
+            <td [title]="task.DepartmentID">{{task.DepartmentID}}</td>
+            <td [title]="task.DueDate">{{task.DueDate}}</td>
+        </tr>
+        <tr *ngIf="paginator.enableNavigate(1)" class="navigate-tr" (click)="paginator.navigatePage(1)" >הבא ></tr>
+    </tbody>
+    </table>
+    <paginator #paginator [items]="tasks" (setPaging)="setPaging($event)"></paginator>
+    <span *ngIf="(!tasks || tasks.length == 0) && objectTypeChosen">אין נתונים להציג עבור {{objectTypeChosen == 'employee' ? 'העובד שנבחר': 'המחלקה שנבחרה'}}</span>
+    <span *ngIf="!objectTypeChosen">בחר עובד/מחלקה כדי לראות את המשימות שלהם</span>
+</div>
